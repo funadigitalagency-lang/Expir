@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXPIR Global Trading | UAE Business Ecosystem</title>
+  <meta name="description" content="EXPIR Global Trading is a UAE-based business ecosystem combining digital marketing, beauty ecommerce, real estate rentals, off-plan opportunities and international trading." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #050505;
+      --black-soft: #0b0d0f;
+      --dark: #101214;
+      --gold: #d6a23a;
+      --gold-soft: #f1c86a;
+      --champagne: #f5e0b4;
+      --white: #f6f2ea;
+      --muted: #b9b2a5;
+      --line: rgba(214, 162, 58, 0.28);
+      --glass: rgba(255, 255, 255, 0.055);
+      --funa: #a7ff00;
+      --quickella: #db2e83;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 4%, rgba(214, 162, 58, 0.18), transparent 28%),
+        radial-gradient(circle at 90% 8%, rgba(255, 255, 255, 0.08), transparent 24%),
+        linear-gradient(180deg, #020202 0%, #0a0b0c 45%, #030303 100%);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: linear-gradient(180deg, rgba(0,0,0,0.94), rgba(0,0,0,0.58), transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(214, 162, 58, 0.12);
+    }
+
+    .nav {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 112px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(214, 162, 58, 0.18));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: rgba(246, 242, 234, 0.78);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold-soft); }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      padding: 14px 22px;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(241, 200, 106, 0.75);
+      box-shadow: 0 14px 40px rgba(214, 162, 58, 0.16);
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, #b98521, #f3ca6b, #b98521);
+      color: #100c05;
+      border-color: transparent;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 860px;
+      display: flex;
+      align-items: center;
+      padding-top: 108px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(214, 162, 58, 0.22);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.72) 35%, rgba(0,0,0,0.22) 72%, rgba(0,0,0,0.5) 100%),
+        url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2200&q=85') center/cover no-repeat;
+      opacity: 0.92;
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 280px;
+      background: linear-gradient(0deg, #050505, transparent);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 70px 0 90px;
+    }
+
+    .eyebrow {
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 500; }
+
+    h1 {
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: 0.94;
+      letter-spacing: -4px;
+      margin-bottom: 26px;
+    }
+
+    .gold-text { color: var(--gold-soft); }
+
+    .hero p {
+      color: rgba(246, 242, 234, 0.82);
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 570px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 55px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      border-top: 1px solid var(--line);
+      background: rgba(0,0,0,0.58);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat {
+      padding: 28px 36px;
+      border-right: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-soft);
+      font-size: 20px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold-soft);
+      font-size: 13px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 46px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 450px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      background: var(--dark);
+      isolation: isolate;
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(241, 200, 106, 0.7);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.5), 0 0 40px rgba(214, 162, 58, 0.16);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.46) 38%, rgba(0,0,0,0.94) 100%);
+      z-index: -1;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(214,162,58,0.12), transparent 42%);
+      opacity: 0;
+      transition: 0.35s ease;
+      z-index: -1;
+    }
+
+    .card:hover::after { opacity: 1; }
+
+    .card.funa-card { border-color: rgba(167, 255, 0, 0.28); }
+    .card.quickella-card { border-color: rgba(219, 46, 131, 0.35); }
+
+    .card.funa-card:hover { box-shadow: 0 22px 60px rgba(0,0,0,0.5), 0 0 45px rgba(167, 255, 0, 0.13); }
+    .card.quickella-card:hover { box-shadow: 0 22px 60px rgba(0,0,0,0.5), 0 0 45px rgba(219, 46, 131, 0.16); }
+
+    .card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.74;
+      transition: 0.35s ease;
+    }
+
+    .card:hover .card-bg {
+      transform: scale(1.06);
+      opacity: 0.9;
+    }
+
+    .logo-panel {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      right: 22px;
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.48);
+      backdrop-filter: blur(14px);
+      padding: 16px;
+    }
+
+    .logo-panel img {
+      max-height: 72px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .quickella-card .logo-panel {
+      background: rgba(219, 46, 131, 0.82);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .vamzom-card .logo-panel {
+      background: rgba(255,255,255,0.92);
+    }
+
+    .card-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: rgba(246, 242, 234, 0.78);
+      line-height: 1.65;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .funa-card .card-link { color: var(--funa); }
+    .quickella-card .card-link { color: #ff9cc9; }
+
+    .identity-strip {
+      margin-top: 20px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .identity-item {
+      padding: 18px;
+      border-right: 1px solid rgba(214,162,58,0.15);
+    }
+
+    .identity-item:last-child { border-right: none; }
+
+    .identity-item strong {
+      display: block;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      letter-spacing: 1.4px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .identity-item span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .why {
+      border-top: 1px solid rgba(214, 162, 58, 0.18);
+      border-bottom: 1px solid rgba(214, 162, 58, 0.18);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(214,162,58,0.12), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .why h2 {
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+
+    .why p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      padding: 24px;
+      border: 1px solid rgba(214, 162, 58, 0.2);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+    }
+
+    .feature-icon {
+      color: var(--gold-soft);
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .feature strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .vision {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .vision-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 34px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    .vision-box h3 {
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .vision-box p, .vision-list li {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+    }
+
+    .world-map {
+      min-height: 360px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.52)),
+        url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .world-map::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 45%, rgba(214,162,58,0.18), transparent 35%);
+    }
+
+    .vision-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      list-style: none;
+    }
+
+    .vision-list strong {
+      display: block;
+      color: var(--gold-soft);
+      margin-bottom: 6px;
+    }
+
+    .investor {
+      padding: 96px 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.38), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+      border-top: 1px solid rgba(214,162,58,0.25);
+      border-bottom: 1px solid rgba(214,162,58,0.25);
+    }
+
+    .investor-box {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 54px;
+      background: rgba(0,0,0,0.62);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.42);
+    }
+
+    .investor-box h2 {
+      font-size: clamp(34px, 4vw, 58px);
+      margin-bottom: 20px;
+    }
+
+    .investor-box p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      padding: 60px 0 28px;
+      background: #030303;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 44px;
+      margin-bottom: 46px;
+    }
+
+    .footer-logo {
+      width: 140px;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 18px rgba(214,162,58,0.18));
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 340px;
+      font-size: 14px;
+    }
+
+    footer h4 {
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .copyright {
+      padding-top: 26px;
+      border-top: 1px solid rgba(214,162,58,0.16);
+      color: rgba(185, 178, 165, 0.72);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links { display: none; }
+      .ecosystem-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); position: relative; margin-top: 40px; }
+      .hero { display: block; padding-bottom: 0; }
+      .hero-content { padding-top: 150px; }
+      .why-grid, .vision { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .identity-strip { grid-template-columns: repeat(2, 1fr); }
+      .identity-item { border-right: none; border-bottom: 1px solid rgba(214,162,58,0.12); }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .nav { height: 76px; }
+      .brand img { width: 86px; }
+      .nav .btn { display: none; }
+      .hero { min-height: auto; }
+      .hero-content { padding: 130px 0 50px; }
+      h1 { letter-spacing: -2px; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid var(--line); }
+      .ecosystem-grid { grid-template-columns: 1fr; }
+      .card { min-height: 420px; }
+      .logo-panel { min-height: 84px; }
+      .logo-panel img { max-height: 58px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .investor-box { padding: 32px 22px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .identity-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#home" aria-label="EXPIR Home">
+          <img src="assets/expir-logo.png" alt="EXPIR Global Trading logo" />
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#ecosystem">Our Ecosystem</a>
+          <a href="#projects">Projects</a>
+          <a href="#investors">Investors</a>
+          <a href="#about">About EXPIR</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="btn" href="#investors">Investor Relations</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <div class="eyebrow">UAE Business Ecosystem</div>
+            <h1>Building Scalable Digital Ecosystems <span class="gold-text">From Dubai</span></h1>
+            <p>EXPIR Global Trading is the UAE-based structure behind a diversified ecosystem combining digital growth, beauty ecommerce, real estate rentals, off-plan opportunities and international trading.</p>
+            <div class="hero-actions">
+              <a class="btn gold" href="#ecosystem">Explore Ecosystem →</a>
+              <a class="btn" href="#investors">Investor Relations →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-icon">⌂</div>
+            <div><strong>UAE Based</strong><span>Registered structure in the Emirates</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">◎</div>
+            <div><strong>4 Divisions</strong><span>Marketing, ecommerce, real estate & trade</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">↗</div>
+            <div><strong>Scalable Model</strong><span>Built for regional and global expansion</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">✦</div>
+            <div><strong>Future Focused</strong><span>Digital, automation, commerce and assets</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ecosystem">
+        <div class="container">
+          <div class="section-head">
+            <div class="eyebrow">Our Ecosystem</div>
+            <h2>One Vision. Multiple Industries. One Scalable Structure.</h2>
+            <p>EXPIR brings together complementary businesses across marketing, ecommerce, real estate and global trade, creating a diversified ecosystem built for growth and investor confidence.</p>
+          </div>
+
+          <div class="ecosystem-grid">
+            <article class="card funa-card">
+              <img class="card-bg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="Digital marketing dashboard" />
+              <div class="logo-panel">
+                <img src="assets/funa-logo.png" alt="FUNA Digital Agency logo" />
+              </div>
+              <div class="card-content">
+                <h3>FUNA Digital Agency</h3>
+                <p>Growth marketing, AI automation, performance ads, content systems and lead generation infrastructure.</p>
+                <a class="card-link" href="https://www.funa.digital/" target="_blank" rel="noopener">Discover FUNA →</a>
+              </div>
+            </article>
+
+            <article class="card quickella-card">
+              <img class="card-bg" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Beauty products" />
+              <div class="logo-panel">
+                <img src="assets/quickella-logo.png" alt="Quickella logo" />
+              </div>
+              <div class="card-content">
+                <h3>Quickella</h3>
+                <p>Beauty ecommerce brand focused on hair tools, cosmetics, personal care and marketplace growth.</p>
+                <a class="card-link" href="https://www.quickella.com" target="_blank" rel="noopener">Visit Quickella →</a>
+              </div>
+            </article>
+
+            <article class="card vamzom-card">
+              <img class="card-bg" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Luxury apartment in Dubai" />
+              <div class="logo-panel">
+                <img src="assets/vamzom-logo.jpeg" alt="Vamzom Rentals logo" />
+              </div>
+              <div class="card-content">
+                <h3>Vamzom Rentals</h3>
+                <p>Real estate platform for room rentals, apartments, off-plan properties and Dubai investment opportunities.</p>
+                <a class="card-link" href="https://funadigitalagency-lang.github.io/Vamzoom/" target="_blank" rel="noopener">Explore Vamzom →</a>
+              </div>
+            </article>
+
+            <article class="card expir-card">
+              <img class="card-bg" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80" alt="Global shipping and trade" />
+              <div class="logo-panel">
+                <img src="assets/expir-logo.png" alt="EXPIR Global Trading logo" />
+              </div>
+              <div class="card-content">
+                <h3>EXPIR Global Trading</h3>
+                <p>Import, export, product sourcing, international distribution and cross-border commercial partnerships.</p>
+                <a class="card-link" href="#contact">Discover Trading →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="identity-strip">
+            <div class="identity-item">
+              <strong>FUNA</strong>
+              <span>The growth engine: marketing, AI, content, ads and digital infrastructure.</span>
+            </div>
+            <div class="identity-item">
+              <strong>Quickella</strong>
+              <span>The consumer brand: beauty ecommerce, marketplace growth and social commerce.</span>
+            </div>
+            <div class="identity-item">
+              <strong>Vamzom</strong>
+              <span>The real estate vertical: rentals, apartments and off-plan property opportunities.</span>
+            </div>
+            <div class="identity-item">
+              <strong>EXPIR Trading</strong>
+              <span>The commerce infrastructure: import, export, sourcing and global distribution.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why" id="about">
+        <div class="container why-grid">
+          <div>
+            <div class="eyebrow">Why EXPIR?</div>
+            <h2>A New Generation UAE Business Ecosystem</h2>
+            <p>EXPIR connects technology, marketing, ecommerce, real estate and global trade under one business structure designed to generate sustainable value, diversified revenue streams and long-term expansion potential.</p>
+            <a class="btn gold" href="#investors">Learn More About EXPIR →</a>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">◈</div>
+              <strong>Diversified</strong>
+              <span>Multiple industries and revenue streams working together under one strategic ecosystem.</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">↗</div>
+              <strong>Scalable</strong>
+              <span>Built for regional expansion, digital growth and long-term international opportunities.</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">✦</div>
+              <strong>Innovative</strong>
+              <span>AI, automation, performance marketing and technology are integrated at the core.</span>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">♛</div>
+              <strong>Strategic</strong>
+              <span>Positioned in Dubai across high-growth sectors with strong investor appeal.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container vision">
+          <div class="vision-box">
+            <div class="eyebrow">Our Vision</div>
+            <h3>Global Expansion</h3>
+            <p>To become a leading UAE-based ecosystem recognized for building scalable brands, transforming industries and creating long-term value for investors, partners and communities.</p>
+          </div>
+
+          <div class="world-map" aria-label="Global expansion visual"></div>
+
+          <div class="vision-box">
+            <ul class="vision-list">
+              <li><strong>Global Opportunities</strong> Expanding to key markets across MENA, Europe and beyond.</li>
+              <li><strong>Strong Partnerships</strong> Strategic alliances that accelerate operational growth.</li>
+              <li><strong>Sustainable Growth</strong> Long-term value through innovation, execution and diversified sectors.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="investor" id="investors">
+        <div class="container">
+          <div class="investor-box">
+            <div class="eyebrow">For Investors</div>
+            <h2>Partner With Future-Ready Businesses</h2>
+            <p>EXPIR offers investors and strategic partners the opportunity to participate in a diversified UAE-based ecosystem spanning digital growth, beauty ecommerce, real estate rentals, off-plan opportunities and international trading.</p>
+            <a class="btn gold" href="mailto:info@expir.ae">Contact Investor Relations →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img class="footer-logo" src="assets/expir-logo.png" alt="EXPIR Global Trading logo" />
+            <p>EXPIR Global Trading is a UAE-based ecosystem combining digital growth, ecommerce, real estate and international trading to build scalable, future-ready businesses.</p>
+          </div>
+
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About EXPIR</a></li>
+              <li><a href="#ecosystem">Our Ecosystem</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#investors">Investors</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Businesses</h4>
+            <ul>
+              <li><a href="https://www.funa.digital/" target="_blank" rel="noopener">FUNA Digital Agency</a></li>
+              <li><a href="https://www.quickella.com" target="_blank" rel="noopener">Quickella</a></li>
+              <li><a href="https://funadigitalagency-lang.github.io/Vamzoom/" target="_blank" rel="noopener">Vamzom Rentals</a></li>
+              <li>EXPIR Global Trading</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>Dubai, United Arab Emirates</li>
+              <li><a href="mailto:info@expir.ae">info@expir.ae</a></li>
+              <li>Investor Relations</li>
+              <li>Strategic Partnerships</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <span>© 2026 EXPIR Global Trading FZE LLC. All Rights Reserved.</span>
+          <span>Privacy Policy · Terms & Conditions</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
